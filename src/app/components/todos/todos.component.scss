@@ -1,0 +1,108 @@
+.todo {
+  display: flex;
+  padding: 10px 15px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  justify-content: center;
+  align-items: center;
+
+  &:nth-child(even) {
+    background-color: #eee;
+  }
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+  .id {
+    flex: 1 1 50px;
+  }
+
+  .content {
+    flex: 1 1 100%;
+  }
+
+  input[type="checkbox"] {
+    visibility: hidden;
+  }
+
+  .checkboxOverride {
+    margin-right: 14px;
+    position: relative;
+    width: 25px;
+    bottom: 2px;
+
+    input[type="checkbox"]:checked + label:after {
+      opacity: 1;
+    }
+
+    label {
+      background: none repeat scroll 0 0 #eeeeee;
+      border: 1px solid #dddddd;
+      cursor: pointer;
+      height: 25px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 25px;
+
+      &:after {
+        border-style: none none solid solid;
+        content: "";
+        height: 5px;
+        left: 6px;
+        opacity: 0;
+        position: absolute;
+        top: 7px;
+        -ms-transform: rotate(-45deg); /* IE 9 */
+        -webkit-transform: rotate(-45deg); /* Safari and Chrome */
+        transform: rotate(-45deg);
+        width: 10px;
+      }
+    }
+  }
+}
+
+.todo.done {
+  .content {
+    text-decoration: line-through;
+  }
+}
+
+.todo-input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  appearance: none;
+  border: none;
+  background-color: #f3f3f3;
+  margin-top: 15px;
+  font-size: 20px;
+  outline: none;
+}
+
+.todo-submit {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+
+  background-color: #fe4880;
+  color: #fff;
+  margin: 15px auto;
+
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.delete {
+  background-color: #fe4880;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  font-weight: 700;
+}
